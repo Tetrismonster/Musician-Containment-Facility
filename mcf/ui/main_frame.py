@@ -1,11 +1,13 @@
 """The main window: the Generate and Library tabs. Models are managed in Preferences."""
 
 import logging
+import threading
+from datetime import datetime, timezone
 from pathlib import Path
 
 import wx
 
-from mcf import APP_NAME, __version__, audio_export, guidance, hardware, hotkeys, jobs, lyrics, paths, recommend
+from mcf import APP_NAME, __version__, app_update, audio_export, guidance, hardware, hotkeys, jobs, lyrics, paths, recommend
 from mcf.announcer import Kind
 from mcf.estimates import describe, describe_duration
 from mcf.i18n import _
@@ -133,6 +135,7 @@ class MainFrame(wx.Frame):
         scan = help_menu.Append(wx.ID_ANY, _("&Hardware scan and model recommendations..."))
         speech = help_menu.Append(wx.ID_ANY, _("Which &speech output is in use?"))
         licenses = help_menu.Append(wx.ID_ANY, _("&Licenses and attribution..."))
+        updates = help_menu.Append(wx.ID_ANY, _("Check for &updates..."))
         about = help_menu.Append(wx.ID_ABOUT, _("&About {name}...").format(name="MCF"))
         bar.Append(help_menu, _("&Help"))
 
@@ -154,6 +157,7 @@ class MainFrame(wx.Frame):
         self.Bind(wx.EVT_MENU, lambda e: self.announcer.speak(
             _("Speech output: {name}").format(name=self.announcer.output_name()), True), speech)
         self.Bind(wx.EVT_MENU, self.on_licenses, licenses)
+        self.Bind(wx.EVT_MENU, lambda e: self.check_for_updates(manual=True), updates)
         self.Bind(wx.EVT_MENU, self.on_about, about)
 
     def save_song(self):
@@ -212,8 +216,69 @@ class MainFrame(wx.Frame):
         if damaged:
             self.announcer.announce(_("{count} artist profiles can't be opened because they've been changed or "
                                       "damaged.").format(count=len(damaged)), Kind.ERROR)
+        self._announce_update_result()
         if not self.settings.get("general.first_run_complete"):
             self.run_onboarding()
+        elif app_update.available() and app_update.check_due(self.settings.get("general.update_check"),
+                                                              self.settings.get("general.last_update_check")):
+            self.settings.set("general.last_update_check", datetime.now(timezone.utc).isoformat())
+            self.check_for_updates(manual=False)
+
+    # Updates to MCF itself
+
+    def _announce_update_result(self):
+        result = app_update.take_result()
+        if result is None:
+            return
+        if result.get("ok"):
+            self.announcer.announce(_("MCF was updated to version {version}.").format(version=__version__),
+                                    Kind.COMPLETION)
+        else:
+            self.announcer.announce(_("The update to version {version} failed, so this copy wasn't changed. "
+                                      "{error} Details are in the logs folder, in update.log.").format(
+                version=result.get("version", ""), error=result.get("error", "")), Kind.ERROR)
+
+    def check_for_updates(self, manual: bool):
+        """manual: from the Help menu, so every outcome is announced. Automatic checks only announce a new version."""
+        if not app_update.available():
+            if manual:
+                self.announcer.announce(_("Updates aren't set up in this version of MCF."), Kind.INFO)
+            return
+        if manual:
+            self.announcer.announce(_("Checking for updates."), Kind.INFO)
+
+        def work():
+            update, error = None, ""
+            try:
+                update = app_update.check()
+            except app_update.UpdateError as exc:
+                error = str(exc)
+            wx.CallAfter(self._update_checked, update, error, manual)
+
+        threading.Thread(target=work, daemon=True).start()
+
+    def _update_checked(self, update, error: str, manual: bool):
+        if not self:
+            return
+        if error:
+            log.warning("Update check: %s", error)
+            if manual:
+                self.announcer.announce(error, Kind.ERROR)
+            return
+        if update is None:
+            if manual:
+                self.announcer.announce(_("MCF is up to date. This is version {version}.").format(
+                    version=__version__), Kind.COMPLETION)
+            return
+        if not manual:
+            self.announcer.announce(_("MCF version {version} is available. Help, Check for updates shows what's "
+                                      "new and installs it.").format(version=update.version_text), Kind.INFO)
+            return
+        from mcf.ui.update_dialog import UpdateDialog
+        with UpdateDialog(self, update) as dialog:
+            installing = dialog.ShowModal() == wx.ID_OK
+        if installing:
+            self.Close()
 
     def run_onboarding(self):
         from mcf.ui.onboarding import SUGGESTED_LYRICS, SUGGESTED_STYLE, OnboardingWizard
@@ -330,7 +395,8 @@ class MainFrame(wx.Frame):
     def on_about(self, event):
         text = _("{name}, version {version}.\n\n"
                  "Generate music with AI models that run on your own computer.\n\n"
-                 "Released under the MIT license. See Help, Licenses and attribution."
+                 "Released under the MIT license. See Help, Licenses and attribution.\n\n"
+                 "The updater is adapted from Sensor Readout by Andre Louis, with permission."
                  ).format(name=APP_NAME, version=__version__)
         with widgets.TextDialog(self, _("About MCF"), text) as dialog:
             dialog.ShowModal()

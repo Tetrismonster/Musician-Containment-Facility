@@ -148,6 +148,11 @@ def _texts() -> dict[str, tuple[str, str]]:
         "clean_up": (
             _("Clean up: deletes temporary files and caches that MCF can rebuild. Songs, models and profiles "
               "are never touched."), ""),
+        "update_check": (
+            _("New versions of MCF: how often MCF checks online for a new version. A new version is announced, "
+              "never installed without asking. Help, Check for updates checks right away."),
+            _("Updates are signed by the MCF project and checked before they're installed. Only the program "
+              "files are replaced. Your settings, library, models and profiles are kept.")),
         "beginner": (_("Beginner explanations: adds background to explanations and to the onboarding "
                        "wizard."), ""),
         "performance_mode": (

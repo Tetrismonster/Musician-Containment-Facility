@@ -46,6 +46,13 @@ This regenerates the credits list, then creates `dist\MCF`. Copy that whole fold
 1. `scripts\make_manifest.py` refreshes the model file list and fingerprints for the pinned model revisions.
 2. `scripts\sign_manifest.py` creates a signing key and signs the model list for online updates.
 3. `scripts\credits.py` regenerates the third-party credits. The build runs it automatically.
+4. `scripts\make_release.py KEY_FILE` packages and signs the built app as `build\release\MCF-X.Y.Z.zip` for a GitHub release tagged `vX.Y.Z`.
+
+## Updates
+
+MCF can update itself from GitHub releases (Help, Check for updates). It is switched off until `RELEASES_URL` in `mcf\app_update.py` and the public key in `mcf\manifest_update.py` are filled in. The releases must be public, because MCF has no GitHub login. An update is accepted only when its download matches GitHub's SHA-256 digest and every file matches a list signed with the MCF project's key. Only `MCF.exe` and `_internal` are replaced, and the old files are restored if that fails.
+
+The updater is adapted from [Sensor Readout](https://github.com/OnjLouis/accessible-sensor-readout) by Andre Louis, used with permission under the MIT license.
 
 ## License
 

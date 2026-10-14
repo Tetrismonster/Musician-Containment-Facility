@@ -145,6 +145,14 @@ class PreferencesDialog(wx.Dialog):
             label = _("&Check online for updates to the list of available models (not available in this version)")
         self.check_updates = _checkbox(panel, sizer, label, s.get("general.check_model_list_updates"))
         self.check_updates.Enable(manifest_update.available())
+        from mcf import app_update
+        self.update_check = labeled(panel, sizer, _("Check for new versions of &MCF:"), lambda p: widgets.choice(p, [
+            ("startup", _("Every time MCF starts")),
+            ("daily", _("Once a day")),
+            ("weekly", _("Once a week")),
+            ("never", _("Never")),
+        ], s.get("general.update_check")), "update_check")
+        self.update_check.Enable(app_update.available())
         self.beginner = _checkbox(panel, sizer, _("I'm &new to AI models: include beginner explanations"),
                                   s.get("guidance.beginner"), "beginner")
         wizard = wx.Button(panel, label=_("Run the &onboarding wizard again"))
@@ -880,6 +888,7 @@ class PreferencesDialog(wx.Dialog):
         s.set("keyboard.cancel_hotkey", self.cancel_hotkey)
         s.set("general.language", widgets.choice_value(self.language))
         s.set("general.check_model_list_updates", self.check_updates.GetValue())
+        s.set("general.update_check", widgets.choice_value(self.update_check))
         try:
             s.save()
         except OSError as exc:

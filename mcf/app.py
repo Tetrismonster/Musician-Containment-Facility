@@ -4,6 +4,7 @@ import logging
 import logging.handlers
 import sys
 import traceback
+from pathlib import Path
 
 import wx
 
@@ -14,11 +15,11 @@ from mcf.settings import Settings
 log = logging.getLogger("mcf")
 
 
-def _setup_logging() -> None:
-    folder = paths.logs_dir()
+def _setup_logging(folder: Path | None = None, name: str = "mcf.log") -> None:
+    folder = folder or paths.logs_dir()
     folder.mkdir(parents=True, exist_ok=True)
     handler = logging.handlers.RotatingFileHandler(
-        folder / "mcf.log", maxBytes=1_000_000, backupCount=3, encoding="utf-8")
+        folder / name, maxBytes=1_000_000, backupCount=3, encoding="utf-8")
     handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
     logging.basicConfig(level=logging.INFO, handlers=[handler])
 
@@ -53,7 +54,7 @@ def self_check() -> int:
     problems = []
     for name in ("mcf.ui.main_frame", "mcf.ui.preferences", "mcf.ui.onboarding", "mcf.ui.training",
                  "mcf.ui.player", "mcf.services", "mcf.setup_tasks", "mcf.audio_export", "mcf.profiles",
-                 "mcf.manifest_update", "wx.media", "soundfile", "numpy", "cryptography"):
+                 "mcf.manifest_update", "mcf.app_update", "wx.media", "soundfile", "numpy", "cryptography"):
         try:
             importlib.import_module(name)
         except Exception as exc:
@@ -95,6 +96,13 @@ def install_runtime_only() -> int:
 
 
 def main() -> None:
+    if "--apply-update" in sys.argv:
+        # This copy runs from the temp folder, so it logs into the MCF folder it's updating
+        from mcf import app_update
+        index = sys.argv.index("--target") + 1 if "--target" in sys.argv else 0
+        if 0 < index < len(sys.argv):
+            _setup_logging(Path(sys.argv[index]) / "logs", "update.log")
+        sys.exit(app_update.apply_from_command_line(sys.argv))
     _setup_logging()
     if "--self-check" in sys.argv:
         sys.exit(self_check())

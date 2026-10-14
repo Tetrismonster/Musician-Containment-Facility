@@ -15,6 +15,10 @@ DEFAULTS: dict[str, Any] = {
         "first_run_complete": False,
         "language": "system",
         "check_model_list_updates": True,
+        # How often to check for a new version of MCF: startup, daily, weekly or never
+        "update_check": "daily",
+        # When the last automatic check ran, as an ISO time; empty means never
+        "last_update_check": "",
     },
     "speech": {
         # quiet, normal or detailed
