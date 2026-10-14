@@ -1,0 +1,6 @@
+wxPython==4.3.1
+accessible_output2==0.17
+pywin32
+numpy
+soundfile
+cryptography

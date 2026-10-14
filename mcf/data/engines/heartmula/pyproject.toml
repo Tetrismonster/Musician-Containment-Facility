@@ -1,0 +1,30 @@
+# The AI runtime MCF installs for HeartMuLa. uv.lock next to this file pins
+# every package and its hash; the heartlib source is pinned in manifest.json.
+[project]
+name = "mcf-heartmula-runtime"
+version = "1.0.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "heartlib",
+    "torch==2.7.1",
+    "torchaudio==2.7.1",
+    "torchvision==0.22.1",
+    "soundfile>=0.13.1",
+    "bitsandbytes==0.49.0",
+    "safetensors",
+]
+
+[tool.uv]
+package = false
+environments = ["sys_platform == 'win32' and platform_machine == 'AMD64'"]
+
+[tool.uv.sources]
+heartlib = { path = "heartlib" }
+torch = { index = "pytorch-cu128" }
+torchaudio = { index = "pytorch-cu128" }
+torchvision = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true

@@ -1,0 +1,62 @@
+MCF is built with the following software. Thank you to everyone who made it.
+
+This list is generated automatically every time MCF is built.
+The AI software that MCF installs into its runtime folder has its own list,
+shown after this one once the runtime is installed.
+
+Python, by Python Software Foundation
+  Python Software Foundation License. https://www.python.org
+
+wxWidgets, by the wxWidgets team
+  wxWindows Library Licence. https://www.wxwidgets.org
+
+NVDA Controller Client, included with accessible_output2, by NV Access
+  GNU Lesser General Public License 2.1. https://www.nvaccess.org
+
+libsndfile, included with soundfile, by Erik de Castro Lopo and contributors
+  GNU Lesser General Public License 2.1. https://libsndfile.github.io/libsndfile/
+
+LAME, mpg123, libFLAC, libogg and libvorbis, included with libsndfile, by their authors
+  LGPL 2.0 (LAME), LGPL 2.1 (mpg123), BSD 3-Clause (FLAC, Ogg, Vorbis).
+
+OpenSSL, included with cryptography, by The OpenSSL Project
+  Apache License 2.0. https://www.openssl.org
+
+accessible-output2 0.17, by Tyler Spivey
+  MIT License.
+
+cffi 2.1.1, by Armin Rigo, Maciej Fijalkowski
+  MIT-0. https://cffi.readthedocs.io/
+
+cryptography 50.0.1, by The Python Cryptographic Authority and individual contributors
+  Apache-2.0 OR BSD-3-Clause. https://github.com/pyca/cryptography
+
+libloader 1.4.3, by Christopher Toth
+  MIT License.
+
+numpy 2.5.3, by Travis E. Oliphant et al.
+  BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0. https://numpy.org
+
+platform_utils 1.6.3, by Christopher Toth
+  MIT License. https://github.com/q-continuum/platform_utils
+
+platformdirs 4.12.1, by Bernát Gábor, Julian Berman, Ofek Lev, Ronny Pfannschmidt
+  MIT. https://github.com/tox-dev/platformdirs
+
+pycparser 3.0, by Eli Bendersky
+  BSD-3-Clause. https://github.com/eliben/pycparser
+
+pywin32 312, by Mark Hammond (et al)
+  Python Software Foundation License. https://github.com/mhammond/pywin32
+
+soundfile 0.14.0, by Bastian Bechtold
+  BSD License. https://github.com/bastibe/python-soundfile
+
+typing_extensions 4.16.0, by "Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee"
+  PSF-2.0. https://github.com/python/typing_extensions
+
+wxPython 4.3.1, by Robin Dunn, Scott Talbert
+  wxWindows Library License (https://opensource.org/licenses/wxwindows.php). https://wxPython.org/
+
+PyInstaller, used to build MCF.exe
+  GNU General Public License 2.0 with an exception that allows building programs under any license. https://pyinstaller.org

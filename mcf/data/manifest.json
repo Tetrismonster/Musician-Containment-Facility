@@ -1,0 +1,1326 @@
+{
+  "format": 1,
+  "version": "2026.09.30",
+  "tools": {
+    "uv": {
+      "name": "uv",
+      "version": "0.12.21",
+      "url": "https://github.com/astral-sh/uv/releases/download/0.12.21/uv-x86_64-pc-windows-msvc.zip",
+      "sha256": "5d223efa0bf00208c3853246af09420419dfbd352536aa6bb8163d6170e23890",
+      "size": 17992232
+    }
+  },
+  "engines": {
+    "ace-step-1.5": {
+      "name": "ACE-Step 1.5",
+      "python": "3.12",
+      "download_gb": 4,
+      "installed_gb": 9,
+      "package_count": 150,
+      "sources": [
+        {
+          "folder": ".",
+          "url": "https://codeload.github.com/ace-step/ACE-Step-1.5/zip/ca1e85fe9430179831e6bc6be790c332190a3866",
+          "source_sha256": "108e45dffc7eb62af98d781c4159aa63a2b7a241186734e3e065279da7fc198d",
+          "tree_sha256": "b41dd2cb6c0f816a1d0c32157c0e3424664f856d1e810a81501f27e31a30e768",
+          "commit": "ca1e85fe9430179831e6bc6be790c332190a3866"
+        }
+      ]
+    },
+    "heartmula": {
+      "name": "HeartMuLa",
+      "python": "3.12",
+      "download_gb": 4,
+      "installed_gb": 8,
+      "package_count": 80,
+      "project": "heartmula",
+      "sources": [
+        {
+          "folder": "heartlib",
+          "url": "https://codeload.github.com/HeartMuLa/heartlib/zip/a18c8cb54a55b4c24d48a2842542f81da7dedcd2",
+          "source_sha256": "25dbbb2cece64a3dc59dc3b46de129d1c8648490cfb159d97a0a1737a680de07",
+          "tree_sha256": "e517810fa5cbd8a3077260265e362ebf849559953ef9b051ebfbe05f3f3c9539",
+          "commit": "a18c8cb54a55b4c24d48a2842542f81da7dedcd2"
+        }
+      ]
+    },
+    "yue2": {
+      "name": "YuE2",
+      "python": "3.12",
+      "download_gb": 4,
+      "installed_gb": 8,
+      "package_count": 80,
+      "project": "yue2",
+      "sources": [
+        {
+          "folder": "yue2",
+          "url": "https://codeload.github.com/multimodal-art-projection/YuE/zip/18a07bb628f070c2eede44c3143834818e856a73",
+          "source_sha256": "b54b2b78922d8347c8850b216ecbe8d1e2486a38e570434b1d5ab1842c5651fc",
+          "tree_sha256": "204711e3be123ee851850312435316c7b68f7509a933891a109898aa4b63ab8a",
+          "commit": "18a07bb628f070c2eede44c3143834818e856a73"
+        }
+      ]
+    },
+    "minimax-music3": {
+      "name": "MiniMax Music 3",
+      "python": "3.12",
+      "download_gb": 4,
+      "installed_gb": 7,
+      "package_count": 80,
+      "project": "minimax-music3",
+      "sources": [
+        {
+          "folder": "diffusers",
+          "url": "https://codeload.github.com/huggingface/diffusers/zip/dafe3733fcfdbf3c48915fe77be3aef65b5d6a2d",
+          "source_sha256": "fc4783ca08070880bf1ae6cbf8c91672537b98f84307bebb14a83a763a579bb2",
+          "tree_sha256": "0a73c349a1efdf54b7494a07501220cced845c0f424652324783a57bbeff162a",
+          "commit": "dafe3733fcfdbf3c48915fe77be3aef65b5d6a2d"
+        }
+      ]
+    },
+    "mulacover": {
+      "name": "MuLaCover",
+      "python": "3.12",
+      "download_gb": 4,
+      "installed_gb": 7,
+      "package_count": 70,
+      "project": "mulacover",
+      "sources": [
+        {
+          "folder": "mulacover",
+          "url": "https://codeload.github.com/HeartMuLa/MuLaCover/zip/f01810c715a58ddc3d5a795c562fe5d8fbd56b24",
+          "source_sha256": "7d187bb585fd11cf7d1819a0bff1e855627d7bbabd2a27e5d6efcb7a48c0bb29",
+          "tree_sha256": "c83be5c6f9366951a350b3631d406ce6ff58635cfe8a3eee3b4f009075c18000",
+          "commit": "f01810c715a58ddc3d5a795c562fe5d8fbd56b24"
+        }
+      ]
+    }
+  },
+  "models": [
+    {
+      "id": "ace-step-1.5",
+      "name": "ACE-Step 1.5",
+      "engine": "ace-step-1.5",
+      "summary": "Full songs with vocals or instrumentals, from 10 seconds to 10 minutes. Fast, and runs on graphics cards with 4 GB of memory or more. Supports covers, editing and artist profiles.",
+      "capabilities": [
+        "lyrics",
+        "instrumental",
+        "extend",
+        "variation",
+        "inpaint",
+        "reference",
+        "cover",
+        "training"
+      ],
+      "languages": "More than 50, including English, Chinese, Japanese, Korean, Spanish, French and German.",
+      "max_seconds": 600,
+      "license": {
+        "name": "MIT",
+        "commercial": true,
+        "authors": "ACE Studio and StepFun",
+        "url": "https://github.com/ace-step/ACE-Step-1.5",
+        "file": "10 ACE-Step 1.5 (MIT).txt",
+        "notes": "The MIT license allows commercial use. The authors ask that you check your songs are original, say that AI was involved, and get permission before imitating protected styles or voices."
+      },
+      "timing": {
+        "load_seconds": {
+          "gpu": 30,
+          "offload": 90,
+          "compressed": 90,
+          "cpu": 150
+        },
+        "seconds_per_audio_second": {
+          "gpu": 0.15,
+          "offload": 1.0,
+          "compressed": 1.0,
+          "cpu": 20
+        },
+        "planner_seconds_per_audio_second": {
+          "gpu": 0.1,
+          "offload": 0.35,
+          "compressed": 0.35,
+          "cpu": 8
+        }
+      },
+      "components": [
+        {
+          "id": "ace-core",
+          "name": "Main model: music generator, audio decoder and text encoder",
+          "required": true,
+          "files": [
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/added_tokens.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/added_tokens.json",
+              "size": 707,
+              "sha256": "c0284b582e14987fbd3d5a2cb2bd139084371ed9acbae488829a1c900833c680"
+            },
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/chat_template.jinja",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/chat_template.jinja",
+              "size": 4116,
+              "sha256": "87a2728cb8dc9fe424d624542f6060ec05a1d285ebbec578bb078900e33396b5"
+            },
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/config.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/config.json",
+              "size": 1359,
+              "sha256": "bb23c1607cfe059a58d8f0196cf1cebb52082b1056b8e358a579da80a5759420"
+            },
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/merges.txt",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/merges.txt",
+              "size": 1671853,
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+            },
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/model.safetensors",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/model.safetensors",
+              "size": 1191586416,
+              "sha256": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd"
+            },
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/special_tokens_map.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/special_tokens_map.json",
+              "size": 613,
+              "sha256": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd"
+            },
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/tokenizer.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/tokenizer.json",
+              "size": 11423705,
+              "sha256": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a"
+            },
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/tokenizer_config.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/tokenizer_config.json",
+              "size": 5404,
+              "sha256": "443bfa629eb16387a12edbf92a76f6a6f10b2af3b53d87ba1550adfcf45f7fa0"
+            },
+            {
+              "path": "checkpoints/Qwen3-Embedding-0.6B/vocab.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/Qwen3-Embedding-0.6B/vocab.json",
+              "size": 2776833,
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            },
+            {
+              "path": "checkpoints/acestep-v15-turbo/config.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-v15-turbo/config.json",
+              "size": 1968,
+              "sha256": "74745ff704ea49164c3d2d1c99fc0670f3fc635a869f0aec2d1311e6a52d400a"
+            },
+            {
+              "path": "checkpoints/acestep-v15-turbo/model.safetensors",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-v15-turbo/model.safetensors",
+              "size": 4787825604,
+              "sha256": "3f6e0797fad420a39bd33979eb6e840e30989e34a3794e843d23b60ec6e422d7"
+            },
+            {
+              "path": "checkpoints/acestep-v15-turbo/silence_latent.pt",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-v15-turbo/silence_latent.pt",
+              "size": 3841215,
+              "sha256": "a778e9dd942f5e8b2c09c55370782d318834432b03dabbcdf70e6ed49ad6358b"
+            },
+            {
+              "path": "checkpoints/vae/config.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/vae/config.json",
+              "size": 425,
+              "sha256": "14e019904df567f26df750317a70e2bd08f9f8f3c40ff4a24c97d1cd3f20ccd2"
+            },
+            {
+              "path": "checkpoints/vae/diffusion_pytorch_model.safetensors",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/vae/diffusion_pytorch_model.safetensors",
+              "size": 337431388,
+              "sha256": "da17edb604c40deaf09e9b24974e590d1ca83a374070e5d0884cfa4bed9a99b0"
+            }
+          ]
+        },
+        {
+          "id": "ace-planner-small",
+          "name": "Song planner, small (0.6B). Improves song structure. Used on graphics cards with 6 to 12 GB.",
+          "required": false,
+          "planner": "acestep-5Hz-lm-0.6B",
+          "min_vram_gb": 6,
+          "files": [
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/added_tokens.json",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/added_tokens.json",
+              "size": 2217787,
+              "sha256": "db08b66a515fb5d6acca0b3492d25bb44e0deda6241fc1113ac0679d40558c48"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/chat_template.jinja",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/chat_template.jinja",
+              "size": 4168,
+              "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/config.json",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/config.json",
+              "size": 1386,
+              "sha256": "873ca63808b74e1e008ab950114765553b898b489b9e077e80db83348a118384"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/merges.txt",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/merges.txt",
+              "size": 1671853,
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/model.safetensors",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/model.safetensors",
+              "size": 1325804024,
+              "sha256": "5d92a60806e2e88c04de58ddc6dde93f2bc8f1336162b3ad5853886c9bcc6b82"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/special_tokens_map.json",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/special_tokens_map.json",
+              "size": 1824199,
+              "sha256": "76e233bfc357b0b03d7b6e6ba8e799244f358552575a7cdadb78d3d19106b298"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/tokenizer.json",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/tokenizer.json",
+              "size": 24321939,
+              "sha256": "35af56c3f5cb3ea2cc578aa28a8937770981d504f183ac5c8c38baf4bbd4af4d"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/tokenizer_config.json",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/tokenizer_config.json",
+              "size": 14072925,
+              "sha256": "6cd70cdd89425971794f5235562edcc608b0629a6c4686ae51a8b8c8b8ba5e95"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-0.6B/vocab.json",
+              "url": "https://huggingface.co/ACE-Step/acestep-5Hz-lm-0.6B/resolve/148d8ea0225bdab342ee1ae3a354275ccd60ca80/vocab.json",
+              "size": 2776833,
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          ]
+        },
+        {
+          "id": "ace-planner-large",
+          "name": "Song planner, large (1.7B). Better song structure. Used on graphics cards with 12 GB or more.",
+          "required": false,
+          "planner": "acestep-5Hz-lm-1.7B",
+          "min_vram_gb": 12,
+          "files": [
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/added_tokens.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/added_tokens.json",
+              "size": 2217787,
+              "sha256": "db08b66a515fb5d6acca0b3492d25bb44e0deda6241fc1113ac0679d40558c48"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/chat_template.jinja",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/chat_template.jinja",
+              "size": 4168,
+              "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/config.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/config.json",
+              "size": 1385,
+              "sha256": "73515ca4bfd86a5b56f28bf680311d1911e159c85d7f7ceb2188e310007c9010"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/merges.txt",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/merges.txt",
+              "size": 1671853,
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/model.safetensors",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/model.safetensors",
+              "size": 3708521528,
+              "sha256": "f161689da73e5ecefa28ff780d51c2d92a00f056d021d7933c779ed5c6cd7db8"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/special_tokens_map.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/special_tokens_map.json",
+              "size": 1824199,
+              "sha256": "76e233bfc357b0b03d7b6e6ba8e799244f358552575a7cdadb78d3d19106b298"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/tokenizer.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/tokenizer.json",
+              "size": 24321939,
+              "sha256": "35af56c3f5cb3ea2cc578aa28a8937770981d504f183ac5c8c38baf4bbd4af4d"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/tokenizer_config.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/tokenizer_config.json",
+              "size": 14072925,
+              "sha256": "6cd70cdd89425971794f5235562edcc608b0629a6c4686ae51a8b8c8b8ba5e95"
+            },
+            {
+              "path": "checkpoints/acestep-5Hz-lm-1.7B/vocab.json",
+              "url": "https://huggingface.co/ACE-Step/Ace-Step1.5/resolve/19671f406d603126926c1b7e2adc169acbcade22/acestep-5Hz-lm-1.7B/vocab.json",
+              "size": 2776833,
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          ]
+        }
+      ],
+      "training": {
+        "min_compute": 8.0,
+        "min_vram_gb": 8,
+        "min_ram_gb": 16,
+        "min_songs": 8,
+        "recommended_songs": 12,
+        "seconds_per_song_epoch": 5.0,
+        "preprocess_seconds_per_song": 20,
+        "notes": "Training uses ACE-Step's trainer (Side-Step). It needs bfloat16 support, which NVIDIA RTX 30 series and newer cards have."
+      },
+      "modes": {
+        "gpu": {
+          "min_vram_gb": 12,
+          "min_ram_gb": 16
+        },
+        "offload": {
+          "min_vram_gb": 4,
+          "min_ram_gb": 16
+        },
+        "compressed": {
+          "min_vram_gb": 4,
+          "min_ram_gb": 16
+        },
+        "cpu": {
+          "min_ram_gb": 16
+        }
+      },
+      "preference": [
+        "gpu",
+        "offload",
+        "compressed",
+        "cpu"
+      ],
+      "min_compute": 7.5,
+      "tags": [
+        "bpm",
+        "key",
+        "time signature",
+        "length",
+        "seed",
+        "steps",
+        "guidance",
+        "instrumental",
+        "language",
+        "profile",
+        "model"
+      ],
+      "modes_supported": [
+        "new",
+        "cover",
+        "extend",
+        "variation",
+        "inpaint",
+        "reference"
+      ],
+      "full_precision_on_old_cards": true,
+      "cover_method": "audio",
+      "defaults": {
+        "steps": 8,
+        "guidance": 7.0
+      },
+      "profiles": true
+    },
+    {
+      "id": "heartmula-3b",
+      "name": "HeartMuLa 3B",
+      "engine": "heartmula",
+      "summary": "Songs with vocals from lyrics and style tags, with strong control over the lyrics. Up to 4 minutes. Close to real time on a large graphics card; on a 6 GB card, about 28 minutes for a 2-minute song.",
+      "capabilities": [
+        "lyrics",
+        "instrumental"
+      ],
+      "modes_supported": [
+        "new"
+      ],
+      "tags": [
+        "length",
+        "seed",
+        "guidance",
+        "instrumental",
+        "model"
+      ],
+      "languages": "Most languages, including English, Chinese, Japanese, Korean and Spanish.",
+      "max_seconds": 240,
+      "license": {
+        "name": "Apache 2.0",
+        "commercial": true,
+        "authors": "the HeartMuLa team",
+        "url": "https://github.com/HeartMuLa/heartlib",
+        "file": "11 HeartMuLa (Apache 2.0).txt"
+      },
+      "min_compute": 7.5,
+      "modes": {
+        "gpu": {
+          "min_vram_gb": 12,
+          "min_ram_gb": 16
+        },
+        "compressed": {
+          "min_vram_gb": 6,
+          "min_ram_gb": 16
+        },
+        "offload": {
+          "min_vram_gb": 4,
+          "min_ram_gb": 24
+        },
+        "cpu": {
+          "min_ram_gb": 24
+        }
+      },
+      "preference": [
+        "gpu",
+        "compressed",
+        "offload",
+        "cpu"
+      ],
+      "timing": {
+        "load_seconds": {
+          "gpu": 60,
+          "compressed": 210,
+          "offload": 120,
+          "cpu": 120
+        },
+        "seconds_per_audio_second": {
+          "gpu": 1.5,
+          "compressed": 12.5,
+          "offload": 10,
+          "cpu": 60
+        },
+        "planner_seconds_per_audio_second": {
+          "gpu": 0,
+          "compressed": 0,
+          "offload": 0,
+          "cpu": 0
+        }
+      },
+      "components": [
+        {
+          "id": "heartmula-core",
+          "name": "Main model, audio codec and tokenizer",
+          "required": true,
+          "files": [
+            {
+              "path": "ckpt/gen_config.json",
+              "url": "https://huggingface.co/HeartMuLa/HeartMuLaGen/resolve/9906b2bcd4598772a32cad4aec0760170fe0d177/gen_config.json",
+              "size": 101,
+              "sha256": "2fc578fc8d8445fa9d73d1925146d53d25b2e5f5d74b8a19aa5c000e37094f41"
+            },
+            {
+              "path": "ckpt/tokenizer.json",
+              "url": "https://huggingface.co/HeartMuLa/HeartMuLaGen/resolve/9906b2bcd4598772a32cad4aec0760170fe0d177/tokenizer.json",
+              "size": 9085657,
+              "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+            },
+            {
+              "path": "ckpt/HeartMuLa-oss-3B/config.json",
+              "url": "https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B-happy-new-year/resolve/41f6fc68490e11dc43fdabaa6b5767946408c903/config.json",
+              "size": 308,
+              "sha256": "a05bf0650f560d235fb3a0c109173d44eb3a9b6231fe599968e12706cd20edf4"
+            },
+            {
+              "path": "ckpt/HeartMuLa-oss-3B/model-00001-of-00004.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B-happy-new-year/resolve/41f6fc68490e11dc43fdabaa6b5767946408c903/model-00001-of-00004.safetensors",
+              "size": 4933188000,
+              "sha256": "4815367cdbddc0192abe3dbe81e2ae6a6e8978a39ad4dd1d26a20e445b3aeea6"
+            },
+            {
+              "path": "ckpt/HeartMuLa-oss-3B/model-00002-of-00004.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B-happy-new-year/resolve/41f6fc68490e11dc43fdabaa6b5767946408c903/model-00002-of-00004.safetensors",
+              "size": 4932808592,
+              "sha256": "f079416ba4c0570231f7a2830a2e95033336a8b3528d1c033a07923a25f4b5d7"
+            },
+            {
+              "path": "ckpt/HeartMuLa-oss-3B/model-00003-of-00004.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B-happy-new-year/resolve/41f6fc68490e11dc43fdabaa6b5767946408c903/model-00003-of-00004.safetensors",
+              "size": 4935901576,
+              "sha256": "b43cd60ff50033fa9a5e08c4eb26edff55d5e95e0a313592804ab026ed3b895d"
+            },
+            {
+              "path": "ckpt/HeartMuLa-oss-3B/model-00004-of-00004.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B-happy-new-year/resolve/41f6fc68490e11dc43fdabaa6b5767946408c903/model-00004-of-00004.safetensors",
+              "size": 950588000,
+              "sha256": "07c5f5820c0c00f0b8ad4544ed8a24ae1888f7d8c8a5d8bb3cdaba418a39cf2f"
+            },
+            {
+              "path": "ckpt/HeartMuLa-oss-3B/model.safetensors.index.json",
+              "url": "https://huggingface.co/HeartMuLa/HeartMuLa-oss-3B-happy-new-year/resolve/41f6fc68490e11dc43fdabaa6b5767946408c903/model.safetensors.index.json",
+              "size": 22579,
+              "sha256": "a96e28d71e3f767c94a7d25723f7ab77ce2abd06d5495315d9770be0e87e00ca"
+            },
+            {
+              "path": "ckpt/HeartCodec-oss/config.json",
+              "url": "https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123/resolve/f889dab0532cfa4bf459f2a3367eb6d346b8eeda/config.json",
+              "size": 981,
+              "sha256": "b55a505b4cf5cd22bba40aac0d9d5082d560c1c942fe17583aaa95f28e3c08cf"
+            },
+            {
+              "path": "ckpt/HeartCodec-oss/model-00001-of-00002.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123/resolve/f889dab0532cfa4bf459f2a3367eb6d346b8eeda/model-00001-of-00002.safetensors",
+              "size": 4930472472,
+              "sha256": "50d2c022468a0e127992d99e02117d2efbad2b10fddc8ceaf09550f154e185d4"
+            },
+            {
+              "path": "ckpt/HeartCodec-oss/model-00002-of-00002.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123/resolve/f889dab0532cfa4bf459f2a3367eb6d346b8eeda/model-00002-of-00002.safetensors",
+              "size": 1707911436,
+              "sha256": "6f319d0f5b31858dfe98bd8fc89d3083cbfff74ac75a0531f1a7b86949197917"
+            },
+            {
+              "path": "ckpt/HeartCodec-oss/model.safetensors.index.json",
+              "url": "https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123/resolve/f889dab0532cfa4bf459f2a3367eb6d346b8eeda/model.safetensors.index.json",
+              "size": 83875,
+              "sha256": "d19153a142865e4a90508294f36c7ec5ab07d33bf0e8b01a0717c75b80ce6a63"
+            }
+          ]
+        }
+      ],
+      "cover_method": null,
+      "defaults": {
+        "guidance": 1.5
+      },
+      "profiles": false
+    },
+    {
+      "id": "yue2-3b",
+      "name": "YuE2 3B",
+      "engine": "yue2",
+      "summary": "Songs with vocals that first writes the melody and chords as a score, then performs it. Covers follow a written score of the melody, so the original recording never reaches the model.",
+      "capabilities": [
+        "lyrics",
+        "cover"
+      ],
+      "modes_supported": [
+        "new",
+        "cover"
+      ],
+      "tags": [
+        "seed",
+        "model"
+      ],
+      "languages": "English and Chinese are strongest; others vary.",
+      "max_seconds": 300,
+      "license": {
+        "name": "CC BY-NC 4.0, with extra permission for individual creators",
+        "commercial": false,
+        "authors": "the Multimodal Art Projection team (m-a-p)",
+        "url": "https://huggingface.co/m-a-p/YuE2-3B",
+        "file": "12 YuE2 (CC BY-NC 4.0).txt",
+        "notes": "Individual creators may publish and sell songs they make with YuE2. Companies may not use it commercially without a separate license. Crediting YuE2 is encouraged."
+      },
+      "min_compute": 7.5,
+      "modes": {
+        "gpu": {
+          "min_vram_gb": 20,
+          "min_ram_gb": 16,
+          "min_compute": 8.0
+        },
+        "offload": {
+          "min_vram_gb": 10,
+          "min_ram_gb": 24,
+          "min_compute": 8.0
+        },
+        "cpu": {
+          "min_ram_gb": 24
+        }
+      },
+      "preference": [
+        "gpu",
+        "offload",
+        "cpu"
+      ],
+      "timing": {
+        "load_seconds": {
+          "gpu": 40,
+          "offload": 60,
+          "cpu": 300
+        },
+        "seconds_per_audio_second": {
+          "gpu": 1.0,
+          "offload": 4,
+          "cpu": 29
+        },
+        "planner_seconds_per_audio_second": {
+          "gpu": 0,
+          "offload": 0,
+          "cpu": 0
+        }
+      },
+      "components": [
+        {
+          "id": "yue2-core",
+          "name": "YuE2 3B model and audio decoder",
+          "required": true,
+          "files": [
+            {
+              "path": "models/YuE2-3B/LICENSE",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/LICENSE",
+              "size": 20309,
+              "sha256": "060985741d20e70613b4c189c7de106cabd3fb2109fbbfb6d705c9d619417dd0"
+            },
+            {
+              "path": "models/YuE2-3B/THIRD_PARTY_NOTICES.md",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/THIRD_PARTY_NOTICES.md",
+              "size": 793,
+              "sha256": "14d3fd9f6fee86b4260b69b0979735b99ffec8c6b4db254567047a4215cd9af3"
+            },
+            {
+              "path": "models/YuE2-3B/config.json",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/config.json",
+              "size": 959,
+              "sha256": "ad3477bbef890bf98ae196c1e4b44779494a6231c4ab66f32708eabadf265329"
+            },
+            {
+              "path": "models/YuE2-3B/generation_config.json",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/generation_config.json",
+              "size": 204,
+              "sha256": "ccc842772f029049fadf9b288393bcdd9f79271b361c0f1875ec1218e4ba5170"
+            },
+            {
+              "path": "models/YuE2-3B/licenses/SnakeBeta-NVIDIA-MIT.txt",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/licenses/SnakeBeta-NVIDIA-MIT.txt",
+              "size": 1076,
+              "sha256": "da9858d516047d82096d01c112a61bd67f26d289039464d668a1d45f91738ecc"
+            },
+            {
+              "path": "models/YuE2-3B/licenses/stable-audio-tools-MIT.txt",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/licenses/stable-audio-tools-MIT.txt",
+              "size": 1069,
+              "sha256": "a1fac33b7bcd791b74fb33aeb439f825e7277e239fc119fb7d2ab6f084a0c101"
+            },
+            {
+              "path": "models/YuE2-3B/model.safetensors",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/model.safetensors",
+              "size": 7261441640,
+              "sha256": "1d55c42c1a9875c34f5d736e15078449992b044e807ce2a138e6cf289a1e59e9"
+            },
+            {
+              "path": "models/YuE2-3B/qwen.tiktoken",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/qwen.tiktoken",
+              "size": 2561218,
+              "sha256": "b2b1b8dfb5cc5f024bafc373121c6aba3f66f9a5a0269e243470a1de16a33186"
+            },
+            {
+              "path": "models/YuE2-3B/weights_manifest.json",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/weights_manifest.json",
+              "size": 179,
+              "sha256": "2296f82c29dcb11aeefde07e216403a32fc86c8f6da2ec15a70102abfd936a93"
+            },
+            {
+              "path": "models/YuE2-3B/yue2_generation_config.json",
+              "url": "https://huggingface.co/m-a-p/YuE2-3B/resolve/c044757a011169583f363168348ae380946efff8/yue2_generation_config.json",
+              "size": 466,
+              "sha256": "203830cebde6e3644eb291925362990d198e66c3b6006cd11f1aaa21904bcc61"
+            },
+            {
+              "path": "models/YuE2-Vae/LICENSE",
+              "url": "https://huggingface.co/m-a-p/YuE2-Vae/resolve/152733a19ad43aa67e367f9b5503ef8075bb5126/LICENSE",
+              "size": 20309,
+              "sha256": "060985741d20e70613b4c189c7de106cabd3fb2109fbbfb6d705c9d619417dd0"
+            },
+            {
+              "path": "models/YuE2-Vae/THIRD_PARTY_NOTICES.md",
+              "url": "https://huggingface.co/m-a-p/YuE2-Vae/resolve/152733a19ad43aa67e367f9b5503ef8075bb5126/THIRD_PARTY_NOTICES.md",
+              "size": 793,
+              "sha256": "14d3fd9f6fee86b4260b69b0979735b99ffec8c6b4db254567047a4215cd9af3"
+            },
+            {
+              "path": "models/YuE2-Vae/config.json",
+              "url": "https://huggingface.co/m-a-p/YuE2-Vae/resolve/152733a19ad43aa67e367f9b5503ef8075bb5126/config.json",
+              "size": 1378,
+              "sha256": "f0191bb9694009956de44e0c361a6f1334760be4c8f848e599bde242a54a0970"
+            },
+            {
+              "path": "models/YuE2-Vae/licenses/SnakeBeta-NVIDIA-MIT.txt",
+              "url": "https://huggingface.co/m-a-p/YuE2-Vae/resolve/152733a19ad43aa67e367f9b5503ef8075bb5126/licenses/SnakeBeta-NVIDIA-MIT.txt",
+              "size": 1076,
+              "sha256": "da9858d516047d82096d01c112a61bd67f26d289039464d668a1d45f91738ecc"
+            },
+            {
+              "path": "models/YuE2-Vae/licenses/stable-audio-tools-MIT.txt",
+              "url": "https://huggingface.co/m-a-p/YuE2-Vae/resolve/152733a19ad43aa67e367f9b5503ef8075bb5126/licenses/stable-audio-tools-MIT.txt",
+              "size": 1069,
+              "sha256": "a1fac33b7bcd791b74fb33aeb439f825e7277e239fc119fb7d2ab6f084a0c101"
+            },
+            {
+              "path": "models/YuE2-Vae/model.safetensors",
+              "url": "https://huggingface.co/m-a-p/YuE2-Vae/resolve/152733a19ad43aa67e367f9b5503ef8075bb5126/model.safetensors",
+              "size": 530512720,
+              "sha256": "807ce9d5149fa27c5ad3e6582058469852e908f6c5acc8c8aa338e7ab7751346"
+            },
+            {
+              "path": "models/YuE2-Vae/weights_manifest.json",
+              "url": "https://huggingface.co/m-a-p/YuE2-Vae/resolve/152733a19ad43aa67e367f9b5503ef8075bb5126/weights_manifest.json",
+              "size": 178,
+              "sha256": "017d64a4d288217a43fcac3866a0e1d55f796fa891d4dfb6de0bd170ab750026"
+            }
+          ]
+        }
+      ],
+      "cover_method": "score",
+      "defaults": {},
+      "profiles": false,
+      "cover_free": [
+        "phrasing"
+      ]
+    },
+    {
+      "id": "mulacover",
+      "name": "MuLaCover",
+      "engine": "mulacover",
+      "summary": "Covers only. Sings the original melody in a new voice and style, from a lead sheet of the melody and chords that MCF makes from its analysis, so the original recording never reaches the model. Chooses its own tempo. Up to 5 minutes; on a 6 GB card, about 16 minutes for a 4-minute song. Songs it makes may only be used noncommercially.",
+      "capabilities": [
+        "lyrics",
+        "cover"
+      ],
+      "modes_supported": [
+        "cover"
+      ],
+      "tags": [
+        "seed",
+        "guidance",
+        "model"
+      ],
+      "languages": "Most languages, including English, Chinese, Japanese, Korean and Spanish.",
+      "max_seconds": 300,
+      "license": {
+        "name": "CC BY-NC 4.0, with extra terms for songs made with it",
+        "commercial": false,
+        "authors": "MuLa Labs (the HeartMuLa team)",
+        "url": "https://github.com/HeartMuLa/MuLaCover",
+        "file": "14 MuLaCover (CC BY-NC 4.0).txt",
+        "notes": "Songs made with MuLaCover may only be used noncommercially: selling or monetising them needs a written license from MuLa Labs. Credit it as \"MuLaCover by MuLa Labs\"."
+      },
+      "min_compute": 7.5,
+      "modes": {
+        "gpu": {
+          "min_vram_gb": 14,
+          "min_ram_gb": 16
+        },
+        "compressed": {
+          "min_vram_gb": 6,
+          "min_ram_gb": 16
+        },
+        "offload": {
+          "min_vram_gb": 4,
+          "min_ram_gb": 24
+        },
+        "cpu": {
+          "min_ram_gb": 32
+        }
+      },
+      "preference": [
+        "gpu",
+        "compressed",
+        "offload",
+        "cpu"
+      ],
+      "timing": {
+        "load_seconds": {
+          "gpu": 60,
+          "compressed": 200,
+          "offload": 200,
+          "cpu": 120
+        },
+        "seconds_per_audio_second": {
+          "gpu": 1.5,
+          "compressed": 4,
+          "offload": 20,
+          "cpu": 60
+        },
+        "planner_seconds_per_audio_second": {
+          "gpu": 0,
+          "compressed": 0,
+          "offload": 0,
+          "cpu": 0
+        }
+      },
+      "components": [
+        {
+          "id": "mulacover-core",
+          "name": "Main model, audio codec and style encoder",
+          "required": true,
+          "files": [
+            {
+              "path": "ckpt/MuLaCover/MODEL_LICENSE",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/MODEL_LICENSE",
+              "size": 2839,
+              "sha256": "65dd6cd78b30c2e6686a02879d890aea2069ed9c9f17a9739810c9de0081f392"
+            },
+            {
+              "path": "ckpt/MuLaCover/config.json",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/config.json",
+              "size": 367,
+              "sha256": "3d47f3548730587973c3d22a409c21d1d8d40491cfd1590dc599cd945a9bfa29"
+            },
+            {
+              "path": "ckpt/MuLaCover/gen_config.json",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/gen_config.json",
+              "size": 246,
+              "sha256": "dbaceef28cf9f6e8c63b65e15bad128b05f36ca9beb4706fbc5c63a8fa497cdb"
+            },
+            {
+              "path": "ckpt/MuLaCover/model-00001-of-00005.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/model-00001-of-00005.safetensors",
+              "size": 1994713352,
+              "sha256": "49e1aeef5e59b3d041a199d7b794ce109d7a4c19ddf1de007d76b6ca45db6ab1"
+            },
+            {
+              "path": "ckpt/MuLaCover/model-00002-of-00005.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/model-00002-of-00005.safetensors",
+              "size": 1981941248,
+              "sha256": "b3a7098ac8d2bc1a36bc86b06810b7f6abe9bf6e87060acf645bfce6c2fb5cad"
+            },
+            {
+              "path": "ckpt/MuLaCover/model-00003-of-00005.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/model-00003-of-00005.safetensors",
+              "size": 1963054632,
+              "sha256": "e41847e7693378c1cec04dcac791156e9f33ef8bba6ad42c0662e207ba97a95b"
+            },
+            {
+              "path": "ckpt/MuLaCover/model-00004-of-00005.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/model-00004-of-00005.safetensors",
+              "size": 1999477480,
+              "sha256": "77502e78a03432a607c4833c309b06659a1cd60b62236335735b72c148ecab52"
+            },
+            {
+              "path": "ckpt/MuLaCover/model-00005-of-00005.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/model-00005-of-00005.safetensors",
+              "size": 809619536,
+              "sha256": "7035def91cdbf20ecc44219414b8d1fedac391bb88b732424a76fe65c8612c63"
+            },
+            {
+              "path": "ckpt/MuLaCover/model.safetensors.index.json",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/model.safetensors.index.json",
+              "size": 56360,
+              "sha256": "792a99481d13d854b85b4d59b879deb3f5334a2e33f90e727a67cec0f76064f3"
+            },
+            {
+              "path": "ckpt/MuLaCover/tokenizer.json",
+              "url": "https://huggingface.co/HeartMuLa/MuLaCover/resolve/bbbaef2b31835c2ef5172ff528dbe325230d46fb/tokenizer.json",
+              "size": 9085657,
+              "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4"
+            },
+            {
+              "path": "ckpt/HeartCodec-oss/config.json",
+              "url": "https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123/resolve/f889dab0532cfa4bf459f2a3367eb6d346b8eeda/config.json",
+              "size": 981,
+              "sha256": "b55a505b4cf5cd22bba40aac0d9d5082d560c1c942fe17583aaa95f28e3c08cf"
+            },
+            {
+              "path": "ckpt/HeartCodec-oss/model-00001-of-00002.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123/resolve/f889dab0532cfa4bf459f2a3367eb6d346b8eeda/model-00001-of-00002.safetensors",
+              "size": 4930472472,
+              "sha256": "50d2c022468a0e127992d99e02117d2efbad2b10fddc8ceaf09550f154e185d4"
+            },
+            {
+              "path": "ckpt/HeartCodec-oss/model-00002-of-00002.safetensors",
+              "url": "https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123/resolve/f889dab0532cfa4bf459f2a3367eb6d346b8eeda/model-00002-of-00002.safetensors",
+              "size": 1707911436,
+              "sha256": "6f319d0f5b31858dfe98bd8fc89d3083cbfff74ac75a0531f1a7b86949197917"
+            },
+            {
+              "path": "ckpt/HeartCodec-oss/model.safetensors.index.json",
+              "url": "https://huggingface.co/HeartMuLa/HeartCodec-oss-20260123/resolve/f889dab0532cfa4bf459f2a3367eb6d346b8eeda/model.safetensors.index.json",
+              "size": 83875,
+              "sha256": "d19153a142865e4a90508294f36c7ec5ab07d33bf0e8b01a0717c75b80ce6a63"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/1_Pooling/config.json",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/1_Pooling/config.json",
+              "size": 313,
+              "sha256": "37bf193fa101f19101bfad9c31d3eb0f786e247b7b1e5cb7f007d730eed1ddbd"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/config.json",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/config.json",
+              "size": 727,
+              "sha256": "b5bf1f51fc45be473a54718cef92448d90a1be001bf9b9a44b8c7f10a19feaa9"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/config_sentence_transformers.json",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/config_sentence_transformers.json",
+              "size": 215,
+              "sha256": "10667c72ddb772627bf1780cb7f86af8e2ae0032b8c243c731172064105c6961"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/generation_config.json",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/generation_config.json",
+              "size": 117,
+              "sha256": "28396d421a2108acce96383f6a7de78008f7f1b17f807958f3c14c51dbfb65fb"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/merges.txt",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/merges.txt",
+              "size": 1671853,
+              "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/model.safetensors",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/model.safetensors",
+              "size": 1191586416,
+              "sha256": "0437e45c94563b09e13cb7a64478fc406947a93cb34a7e05870fc8dcd48e23fd"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/modules.json",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/modules.json",
+              "size": 349,
+              "sha256": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/tokenizer.json",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/tokenizer.json",
+              "size": 11423705,
+              "sha256": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/tokenizer_config.json",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/tokenizer_config.json",
+              "size": 9706,
+              "sha256": "253153d0738ceb4c668d2eff957714dd2bea0b56de772a9fdccd96cbf517e6a0"
+            },
+            {
+              "path": "ckpt/Qwen3-Embedding-0.6B/vocab.json",
+              "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3/vocab.json",
+              "size": 2776833,
+              "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+            }
+          ]
+        }
+      ],
+      "cover_method": "score",
+      "defaults": {},
+      "profiles": false,
+      "cover_free": [
+        "tempo",
+        "phrasing"
+      ]
+    },
+    {
+      "id": "minimax-music3",
+      "name": "MiniMax Music 3",
+      "engine": "minimax-music3",
+      "summary": "Complete songs up to 5 minutes with vocals, arrangement and production, from a detailed description. The largest model: about 28 GB.",
+      "capabilities": [
+        "lyrics",
+        "instrumental"
+      ],
+      "modes_supported": [
+        "new"
+      ],
+      "tags": [
+        "bpm",
+        "key",
+        "length",
+        "seed",
+        "instrumental",
+        "model"
+      ],
+      "languages": "English and Chinese are strongest; others vary.",
+      "max_seconds": 300,
+      "license": {
+        "name": "MiniMax-Music3 Community License",
+        "commercial": true,
+        "authors": "MiniMax",
+        "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3",
+        "file": "13 MiniMax Music 3 (Community License).txt",
+        "notes": "Commercial use is allowed. A commercial product using it must show the name MiniMax-Music3, and companies earning over 20 million US dollars a year need MiniMax's written permission. You must not use it to infringe anyone's rights."
+      },
+      "min_compute": 7.5,
+      "modes": {
+        "gpu": {
+          "min_vram_gb": 24,
+          "min_ram_gb": 32,
+          "min_compute": 8.0
+        },
+        "offload": {
+          "min_vram_gb": 6,
+          "min_ram_gb": 40
+        },
+        "cpu": {
+          "min_ram_gb": 48
+        }
+      },
+      "preference": [
+        "gpu",
+        "offload",
+        "cpu"
+      ],
+      "timing": {
+        "load_seconds": {
+          "gpu": 90,
+          "offload": 150,
+          "cpu": 200
+        },
+        "seconds_per_audio_second": {
+          "gpu": 1.0,
+          "offload": 15,
+          "cpu": 120
+        },
+        "planner_seconds_per_audio_second": {
+          "gpu": 0,
+          "offload": 0,
+          "cpu": 0
+        }
+      },
+      "components": [
+        {
+          "id": "minimax-core",
+          "name": "Language model, music transformer, decoder and vocoder",
+          "required": true,
+          "files": [
+            {
+              "path": "condition_encoder/config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/condition_encoder/config.json",
+              "size": 292,
+              "sha256": "1cdea3f36506719128ae4a29cdfff74b1134e607eb4a504ce6d810568fac8263"
+            },
+            {
+              "path": "condition_encoder/diffusion_pytorch_model.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/condition_encoder/diffusion_pytorch_model.safetensors",
+              "size": 100671852,
+              "sha256": "83179c5eaa9a68a370affe0c1b96c2179f659ea4175666b31071490a202c2a4d"
+            },
+            {
+              "path": "config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/config.json",
+              "size": 107,
+              "sha256": "1ffcff67d916d5519d1ef9a36853232ee6bcb7e14a936623c4e85559f5dce106"
+            },
+            {
+              "path": "language_model/config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/language_model/config.json",
+              "size": 1596,
+              "sha256": "34ded58fcd5e8181557f1417e76af9f3e95109a5ce113a4771fd16f8625b53c0"
+            },
+            {
+              "path": "language_model/generation_config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/language_model/generation_config.json",
+              "size": 158,
+              "sha256": "c0f7c1612e174a7bdec9548464a7bf031a0292587033228e6767fb9e5dc367cd"
+            },
+            {
+              "path": "language_model/model-00001-of-00004.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/language_model/model-00001-of-00004.safetensors",
+              "size": 4910103856,
+              "sha256": "1e95924a158b45b67cfad04fa0f0a352e5a263e69338734d7c1d558be776cc98"
+            },
+            {
+              "path": "language_model/model-00002-of-00004.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/language_model/model-00002-of-00004.safetensors",
+              "size": 4915960352,
+              "sha256": "fde2d335eef7eafa268d35e53d4b040ee51d2f3fa727f9855b4c97d88a2892da"
+            },
+            {
+              "path": "language_model/model-00003-of-00004.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/language_model/model-00003-of-00004.safetensors",
+              "size": 4983068496,
+              "sha256": "6549a831637ab678a573047e7fa8fdf966998c4f45330e6eb7573d67f7b9b4c6"
+            },
+            {
+              "path": "language_model/model-00004-of-00004.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/language_model/model-00004-of-00004.safetensors",
+              "size": 2359864688,
+              "sha256": "a1c9865f357b64d3ae9f428fb98a844831e5a0aee9ed17b19bd7f7be32b964a9"
+            },
+            {
+              "path": "language_model/model.safetensors.index.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/language_model/model.safetensors.index.json",
+              "size": 32914,
+              "sha256": "a8bf9de1e8c0d680f39730a127d74445b4abf505623bd91d5ed4f97c0869cc2a"
+            },
+            {
+              "path": "modular_model_index.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/modular_model_index.json",
+              "size": 2391,
+              "sha256": "1dc86609cf8855e70cc3f5d085213988094fb59e448aedcda06740d34e386002"
+            },
+            {
+              "path": "rvq_depth_decoder/config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/rvq_depth_decoder/config.json",
+              "size": 274,
+              "sha256": "b38c7f72d4b2fa8667442071f9e4a63ca5a7b5d0859e5e64ee7f79c4bc64520c"
+            },
+            {
+              "path": "rvq_depth_decoder/diffusion_pytorch_model.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/rvq_depth_decoder/diffusion_pytorch_model.safetensors",
+              "size": 1292055248,
+              "sha256": "80e86ab006bb5c8d4f223205045035a1c77b2bb9c3be9a86d7e740bbafe5ddf0"
+            },
+            {
+              "path": "scheduler/scheduler_config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/scheduler/scheduler_config.json",
+              "size": 483,
+              "sha256": "b544466124aab333da4874417da0168610067e9c9ff95fcb63d749e4bf891d99"
+            },
+            {
+              "path": "tokenizer/chat_template.jinja",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/tokenizer/chat_template.jinja",
+              "size": 4168,
+              "sha256": "a55ee1b1660128b7098723e0abcd92caa0788061051c62d51cbe87d9cf1974d8"
+            },
+            {
+              "path": "tokenizer/tokenizer.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/tokenizer/tokenizer.json",
+              "size": 11423801,
+              "sha256": "b1537fa9e59a537276ecbc2e12d0438edff635a1f4a4948e679774b5feb3e610"
+            },
+            {
+              "path": "tokenizer/tokenizer_config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/tokenizer/tokenizer_config.json",
+              "size": 377,
+              "sha256": "1689852cc9c45010de040c8302a8acdc0d2c4c6c740dd7e9dd0a8c704e16eada"
+            },
+            {
+              "path": "transformer/config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/transformer/config.json",
+              "size": 294,
+              "sha256": "f60856be934127a8b8223510aff2e38a9efd8bbdbc230c3d3339b96e2cb12f00"
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+              "size": 4959921384,
+              "sha256": "1943baebe93b5d5a57e9e1f603d9cef51a73a55e7a42f52913932dc06dcf10f0"
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+              "size": 4767750800,
+              "sha256": "b2f9e29d241e107e5a281f8b369d6db48eee983917df966c56d7b8dd0bd482c2"
+            },
+            {
+              "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/transformer/diffusion_pytorch_model.safetensors.index.json",
+              "size": 42679,
+              "sha256": "5a57fc3b98e91ec7f4e9da199b3dc8ce1c67e42824c42bed91c15443c049b991"
+            },
+            {
+              "path": "vocoder/config.json",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/vocoder/config.json",
+              "size": 251,
+              "sha256": "4161afd07ba7d5b949e29c8a7a005592259fba73e9110b6ece9dfd38d3489eac"
+            },
+            {
+              "path": "vocoder/diffusion_pytorch_model.safetensors",
+              "url": "https://huggingface.co/MiniMaxAI/MiniMax-Music3/resolve/fbdf52fbaaca799592917417eb05f1899f1255ec/vocoder/diffusion_pytorch_model.safetensors",
+              "size": 216695272,
+              "sha256": "daf0bf0560ea978ce7b5ec3e82f420a44429efef18bdfbe3c714d55ceffbe934"
+            }
+          ]
+        }
+      ],
+      "cover_method": null,
+      "defaults": {},
+      "profiles": false
+    }
+  ],
+  "cover_tools": {
+    "name": "Cover analysis tools",
+    "summary": "Separates the vocals from a song, and transcribes its lyrics. Needed for covers with any model. Uses the ACE-Step AI software, which is installed too if it isn't already.",
+    "components": [
+      {
+        "id": "whisper",
+        "name": "Whisper large-v3 turbo, for transcribing lyrics",
+        "required": true,
+        "license": {
+          "name": "MIT",
+          "authors": "OpenAI",
+          "url": "https://huggingface.co/openai/whisper-large-v3-turbo",
+          "file": "20 Whisper (MIT).txt"
+        },
+        "files": [
+          {
+            "path": "whisper-large-v3-turbo/added_tokens.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/added_tokens.json",
+            "size": 34648,
+            "sha256": "3c51f66c4c21f9e126970078f11ae77a78c74aee8df606ee9daba86e467108e0"
+          },
+          {
+            "path": "whisper-large-v3-turbo/config.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/config.json",
+            "size": 1256,
+            "sha256": "c5b526b3e3cd64cd8940dabb45e8ba726629e22d8ed389c29b552f9140daf04a"
+          },
+          {
+            "path": "whisper-large-v3-turbo/generation_config.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/generation_config.json",
+            "size": 3772,
+            "sha256": "cce11bfe3aaa6ae9e072ea2637caaec8795e68d9b67e655a5af16ee509681a4c"
+          },
+          {
+            "path": "whisper-large-v3-turbo/merges.txt",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/merges.txt",
+            "size": 493869,
+            "sha256": "2df2990a395e35e8dfbc7511e08c12d56018d8d04691e0133e5d63b21e154dc6"
+          },
+          {
+            "path": "whisper-large-v3-turbo/model.safetensors",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/model.safetensors",
+            "size": 1617824864,
+            "sha256": "542566a422ae4f3fd23f1ba11add198fca01bbf82e66e6a2857b3f608b1eb9d1"
+          },
+          {
+            "path": "whisper-large-v3-turbo/normalizer.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/normalizer.json",
+            "size": 52666,
+            "sha256": "bf1c507dc8724ca9cf9903640dacfb69dae2f00edee4f21ceba106a7392f26dd"
+          },
+          {
+            "path": "whisper-large-v3-turbo/preprocessor_config.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/preprocessor_config.json",
+            "size": 340,
+            "sha256": "7ccc62c6f2765af1f3b46c00c9b5894426835a05021c8b9c01eecb6dfb542711"
+          },
+          {
+            "path": "whisper-large-v3-turbo/special_tokens_map.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/special_tokens_map.json",
+            "size": 2186,
+            "sha256": "baea4ea09372eb4fca86b4e4346139fd73cb807d5087e9de0948e971739c3e74"
+          },
+          {
+            "path": "whisper-large-v3-turbo/tokenizer.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/tokenizer.json",
+            "size": 2710337,
+            "sha256": "297b13372ac43916285644fb9687add3cc62ee2a1adb60da3dc25cc94c1871fd"
+          },
+          {
+            "path": "whisper-large-v3-turbo/tokenizer_config.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/tokenizer_config.json",
+            "size": 282843,
+            "sha256": "844b642c73a91359722f47b35705f7174686df33d252695d8572cf9ac03a6389"
+          },
+          {
+            "path": "whisper-large-v3-turbo/vocab.json",
+            "url": "https://huggingface.co/openai/whisper-large-v3-turbo/resolve/41f01f3fe87f28c78e2fbf8b568835947dd65ed9/vocab.json",
+            "size": 1036558,
+            "sha256": "e2aa043ef015641d363d8288e7c241c85e36a5c761fb303598e0710233344387"
+          }
+        ]
+      },
+      {
+        "id": "demucs",
+        "name": "Hybrid Demucs, for separating vocals from instruments",
+        "required": true,
+        "license": {
+          "name": "MIT",
+          "authors": "Meta AI (Alexandre D\u00e9fossez)",
+          "url": "https://github.com/facebookresearch/demucs",
+          "file": "21 Hybrid Demucs (MIT).txt",
+          "notes": "The code and weights are MIT licensed. The model was trained on MUSDB-HQ, a dataset licensed for non-commercial research. MCF uses it only to analyse songs, and deletes the separated audio afterwards."
+        },
+        "files": [
+          {
+            "path": "demucs/hdemucs_high_trained.pt",
+            "url": "https://download.pytorch.org/torchaudio/models/hdemucs_high_trained.pt",
+            "size": 334697255,
+            "sha256": "a004b2790d73ffeaa535db458a1a79b539dfdbafbccc31f275d07e632ebd7816"
+          }
+        ]
+      }
+    ],
+    "engine": "ace-step-1.5"
+  }
+}

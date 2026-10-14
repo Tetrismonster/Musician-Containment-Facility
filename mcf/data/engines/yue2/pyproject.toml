@@ -1,0 +1,24 @@
+# The AI runtime MCF installs for YuE2. uv.lock next to this file pins every
+# package and its hash; the YuE2 source is pinned in manifest.json.
+[project]
+name = "mcf-yue2-runtime"
+version = "1.0.0"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "yue2-infer",
+    "torch==2.10.0",
+    "soundfile>=0.13.1",
+]
+
+[tool.uv]
+package = false
+environments = ["sys_platform == 'win32' and platform_machine == 'AMD64'"]
+
+[tool.uv.sources]
+yue2-infer = { path = "yue2" }
+torch = { index = "pytorch-cu128" }
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
