@@ -82,6 +82,7 @@ class MainFrame(wx.Frame):
         self._stage = ""
         self._hotkey_registered = False
         self._hotkey_suspended = False
+        self._checking_updates = False
 
         self.CreateStatusBar()
         self.announcer.status_listeners.append(self.on_status)
@@ -135,7 +136,7 @@ class MainFrame(wx.Frame):
         scan = help_menu.Append(wx.ID_ANY, _("&Hardware scan and model recommendations..."))
         speech = help_menu.Append(wx.ID_ANY, _("Which &speech output is in use?"))
         licenses = help_menu.Append(wx.ID_ANY, _("&Licenses and attribution..."))
-        updates = help_menu.Append(wx.ID_ANY, _("Check for &updates..."))
+        updates = help_menu.Append(wx.ID_ANY, _("Check for &updates...\tShift+F1"))
         about = help_menu.Append(wx.ID_ABOUT, _("&About {name}...").format(name="MCF"))
         bar.Append(help_menu, _("&Help"))
 
@@ -239,13 +240,19 @@ class MainFrame(wx.Frame):
                 version=result.get("version", ""), error=result.get("error", "")), Kind.ERROR)
 
     def check_for_updates(self, manual: bool):
-        """manual: from the Help menu, so every outcome is announced. Automatic checks only announce a new version."""
+        """manual: from the Help menu or Shift+F1, so every outcome is announced. Automatic checks only
+        announce a new version."""
+        if self._checking_updates:
+            if manual:
+                self.announcer.announce(_("Still checking for updates."), Kind.INFO)
+            return
         if not app_update.available():
             if manual:
                 self.announcer.announce(_("Updates aren't set up in this version of MCF."), Kind.INFO)
             return
         if manual:
             self.announcer.announce(_("Checking for updates."), Kind.INFO)
+        self._checking_updates = True
 
         def work():
             update, error = None, ""
@@ -260,6 +267,7 @@ class MainFrame(wx.Frame):
     def _update_checked(self, update, error: str, manual: bool):
         if not self:
             return
+        self._checking_updates = False
         if error:
             log.warning("Update check: %s", error)
             if manual:
@@ -271,8 +279,8 @@ class MainFrame(wx.Frame):
                     version=__version__), Kind.COMPLETION)
             return
         if not manual:
-            self.announcer.announce(_("MCF version {version} is available. Help, Check for updates shows what's "
-                                      "new and installs it.").format(version=update.version_text), Kind.INFO)
+            self.announcer.announce(_("MCF version {version} is available. Press Shift+F1 to hear what's new "
+                                      "and install it.").format(version=update.version_text), Kind.INFO)
             return
         from mcf.ui.update_dialog import UpdateDialog
         with UpdateDialog(self, update) as dialog:

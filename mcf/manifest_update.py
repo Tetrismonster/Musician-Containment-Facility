@@ -22,7 +22,7 @@ log = logging.getLogger(__name__)
 # Filled in when the project publishes a signed model list. Empty means online
 # updates are switched off in this build.
 MANIFEST_URL = ""
-PUBLIC_KEY_B64 = ""
+PUBLIC_KEY_B64 = "01fBSNvwsZQRvnKU7JPH/uxI/+lpQMOTt5qqac3t8FQ="
 
 
 class UpdateError(Exception):

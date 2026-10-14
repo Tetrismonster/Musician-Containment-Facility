@@ -50,7 +50,7 @@ This regenerates the credits list, then creates `dist\MCF`. Copy that whole fold
 
 ## Updates
 
-MCF can update itself from GitHub releases (Help, Check for updates). It checks this repository's releases, and stays switched off until the public key in `mcf\manifest_update.py` is filled in. The releases must stay public, because MCF has no GitHub login. An update is accepted only when its download matches GitHub's SHA-256 digest and every file matches a list signed with the MCF project's key. Only `MCF.exe` and `_internal` are replaced, and the old files are restored if that fails.
+MCF can update itself from GitHub releases (Help, Check for updates, or Shift+F1). It checks this repository's releases, and stays switched off until the public key in `mcf\manifest_update.py` is filled in. The releases must stay public, because MCF has no GitHub login. An update is accepted only when its download matches GitHub's SHA-256 digest and every file matches a list signed with the MCF project's key. Only `MCF.exe` and `_internal` are replaced, and the old files are restored if that fails.
 
 The updater is adapted from [Sensor Readout](https://github.com/OnjLouis/accessible-sensor-readout) by Andre Louis, used with permission under the MIT license.
 
