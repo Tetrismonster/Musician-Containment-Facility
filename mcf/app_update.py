@@ -46,11 +46,9 @@ from mcf.i18n import _
 
 log = logging.getLogger(__name__)
 
-# Filled in when the project publishes releases, for example
-# https://api.github.com/repos/OWNER/REPO/releases. Empty means updates are
-# switched off in this build. The releases must be public: MCF has no
-# GitHub login, and must never ship one.
-RELEASES_URL = ""
+# The releases must be public: MCF has no GitHub login, and must never ship
+# one. Updates also stay off until manifest_update.PUBLIC_KEY_B64 is set.
+RELEASES_URL = "https://api.github.com/repos/Tetrismonster/Musician-Containment-Facility/releases"
 
 PACKAGE_FORMAT = "MCFUpdatePackage"
 MANIFEST_NAME = "mcf-update-manifest.json"
